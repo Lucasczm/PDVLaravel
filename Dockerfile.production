@@ -1,0 +1,20 @@
+FROM ambientum/php:7.1-caddy
+
+WORKDIR /var/www/app
+
+COPY . /var/www/app
+
+RUN sudo apk --update add mysql-client && \
+    sudo rm -rf /var/cache/apk/* && \
+    sudo chmod -R 777 bootstrap/cache && \
+    sudo chmod -R 777 storage/* && \
+    composer install --optimize-autoloader --no-dev && \
+    php artisan config:clear && \
+    echo -e "\nphp artisan config:cache" >> /home/ambientum/start.sh && \
+    echo -e "\nphp artisan optimize" >> /home/ambientum/start.sh
+
+# Expose webserver port
+EXPOSE 8080
+
+# Starts a single shell script that puts php-fpm as a daemon and caddy on foreground
+CMD ["/home/ambientum/start.sh"]

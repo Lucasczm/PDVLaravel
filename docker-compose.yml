@@ -1,0 +1,38 @@
+# v3 syntax
+version: "3"
+
+services:
+  pdv-app:
+    build: .
+    ports:
+      - "80:8080"
+    volumes:
+      - ./:/var/www/app
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: laravel
+      MYSQL_DATABASE: pdv
+      MYSQL_ROOT_PASSOWRD: laravel
+    networks:
+      - app-network
+
+  phpMyAdmin:
+    image: phpmyadmin/phpmyadmin:latest
+    networks:
+      - app-network
+    ports:
+      - 3307:80
+    environment:
+      - PMA_ARBITRARY=1
+
+networks:
+  app-network:
+    driver: bridge

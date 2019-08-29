@@ -1,0 +1,13 @@
+.git
+.env
+.env*
+.docker
+.gitignore
+.gitattributes
+README.md
+docs
+vendor
+storage/framework/cache/**
+storage/framework/sessions/**
+storage/framework/views/**
+storage/framework/logs/**
