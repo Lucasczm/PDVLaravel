@@ -30,9 +30,9 @@ return [
     |
     */
 
-   'logo' => env('ADM_LOGO', 'PDV <b>Laravel</b>'),
-   'logo_mini' => env('ADM_LOGO_MIN', 'P<b>L</b>'),
-   
+    'logo' => env('ADM_LOGO', 'PDV <b>Laravel</b>'),
+    'logo_mini' => env('ADM_LOGO_MIN', 'P<b>L</b>'),
+
     /*
     |--------------------------------------------------------------------------
     | Skin Color
@@ -43,8 +43,8 @@ return [
     | ligth variant: blue-light, purple-light, purple-light, etc.
     |
     */
-    
-   'skin' => env('ADM_SKIN', 'red'),
+
+    'skin' => env('ADM_SKIN', 'red'),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => "register",
+    'register_url' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'MENU',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
@@ -116,8 +116,8 @@ return [
         [
             'text'        => 'Inicio',
             'url'         => '/',
-           // 'icon'        => 'file',
-           // 'label'       => 4,
+            // 'icon'        => 'file',
+            // 'label'       => 4,
             'label_color' => 'success',
         ],
         [
@@ -134,25 +134,25 @@ return [
                     'text' => 'Abrir Caixa',
                     'url'  => 'caixa/abrir',
                     'icon' => 'folder-open-o',
-                    'icon_color'=> 'green'
+                    'icon_color' => 'green'
                 ],
                 [
                     'text' => 'Fechar Caixa',
                     'url'  => 'caixa/fechar',
                     'icon' => 'folder',
-                    'icon_color'=> 'red'
+                    'icon_color' => 'red'
                 ],
                 [
                     'text' => 'Sangria',
                     'url'  => 'caixa/sangria',
                     'icon' => 'money',
-                    'icon_color'=> 'red'
+                    'icon_color' => 'red'
                 ],
                 [
                     'text' => 'Adicionar Dinheiro',
                     'url'  => 'caixa/adicionar',
                     'icon' => 'money',
-                    'icon_color'=> 'green'
+                    'icon_color' => 'green'
                 ],
             ]
         ],
@@ -209,19 +209,19 @@ return [
             'icon' => 'cloud-upload',
             'icon_color' => 'green',
         ],
-    
-        /*
-        'ACCOUNT SETTINGS',
+
+        'CONTA',
+        // [
+        //     'text' => 'Profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'user',
+        // ],
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
+            'text' => 'Alterar Usuário/Senha',
             'url'  => 'admin/settings',
             'icon' => 'lock',
         ],
+        /*
         [
             'text'    => 'Multilevel',
             'icon'    => 'share',
